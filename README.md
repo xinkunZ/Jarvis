@@ -1,2 +1,2 @@
 # Jarvis
-* 用于快速更换人们的住所，让市民有良好的生活环境
+* A manager can change your adress when some bad thing occurred
