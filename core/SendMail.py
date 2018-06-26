@@ -3,7 +3,7 @@
 import smtplib
 from email.header import Header
 from email.mime.text import MIMEText
-from src.resources.R import getconfig
+from cfg.R import getconfig
 
 __all__ = ['sendmail']
 
