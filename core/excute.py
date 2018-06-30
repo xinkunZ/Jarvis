@@ -7,10 +7,10 @@ def check():
         opener = request.build_opener(proxy_handler)
         url = 'https://www.google.com'
         req = opener.open(url)
-        data = req.read().decode('utf8')
-        print(data)
+        return True
     except Exception as e:
         print(e)
+        return False
 
 
-check()
+print(check())

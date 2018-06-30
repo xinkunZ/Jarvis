@@ -1,8 +1,7 @@
 import configparser
 import os
-from os.path import expanduser
 
-__all__ = ['getconfig', 'inipath','read_api_auth']
+__all__ = ['getconfig', 'get_ini_path']
 
 
 def getconfig(sec: str, item: str):
@@ -13,19 +12,6 @@ def getconfig(sec: str, item: str):
     return cof
 
 
-# todo 复制配置到user.home下
-
-
-def inipath():
+def get_ini_path():
     path = os.path.realpath(__file__)
     return os.path.abspath(os.path.dirname(path) + os.path.sep)
-
-
-def read_api_auth():
-    path = os.path.realpath(__file__)
-    file_object = open(os.path.abspath(os.path.dirname(path) + os.path.sep + 'auth.json'))
-    try:
-        all_the_text = file_object.read()
-        return all_the_text
-    finally:
-        file_object.close()
