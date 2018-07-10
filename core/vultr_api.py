@@ -29,6 +29,7 @@ def create_server():
     }
     region_id = get_prefer_region_id()
     plan_id = get_cheap_plan_id(region_id)
+    # odid=164 means create vm from snapshot
     vultr.server.create(dcid=int(region_id), vpsplanid=plan_id, osid=164, params=param)
 
 
@@ -50,3 +51,6 @@ def get_prefer_region_id():
         if datastr.get(location, None) is not None:
             return location
     return next(iter(datastr.items()))
+
+
+print(vultr.server.list())
